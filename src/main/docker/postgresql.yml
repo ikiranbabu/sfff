@@ -1,0 +1,11 @@
+version: '2'
+services:
+    sfff-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/sfff/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=sfff
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

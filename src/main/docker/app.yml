@@ -1,0 +1,14 @@
+version: '2'
+services:
+    sfff-app:
+        image: sfff
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://sfff-postgresql:5432/sfff
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    sfff-postgresql:
+        extends:
+            file: postgresql.yml
+            service: sfff-postgresql
